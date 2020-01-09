@@ -1,8 +1,10 @@
 import React from 'react'
-import { push as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu'
+import './SideBar.css'
+import { Link } from 'react-router-dom'
 
 export default function SideBar() {
-    var styles = {
+    const styles = {
         bmBurgerButton: {
             position: 'fixed',
             width: '36px',
@@ -46,9 +48,17 @@ export default function SideBar() {
             background: 'rgba(0, 0, 0, 0.3)'
         }
     }
+
     return (
-        <Menu noOverlay disableAutoFocus styles={styles}>
-            
+        <Menu pageWrapId={"page-wrap"} disableAutoFocus styles={styles}>
+            <div>
+                <Link to="/">
+                    <h3>Home</h3>
+                </Link>
+                <Link to="/pokemons">
+                    <h3>Pokémons</h3>
+                </Link>
+            </div>
         </Menu>
     )
 }
