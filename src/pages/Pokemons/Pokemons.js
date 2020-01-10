@@ -16,15 +16,17 @@ function Items() {
     }, [])
 
     return (
-        <div>
+        <div className="container">
             <h1>Pokémons</h1>
-            {
-                pokemons.map((pokemon, idx) => {
-                    return (
-                        <PokemonDetails key={idx} name={pokemon.name} url={pokemon.url}/>
-                    )
-                })
-            }
+            <div className="gridPokemons">
+                {
+                    pokemons.map((pokemon, idx) => {
+                        return (
+                            <PokemonDetails key={idx} name={pokemon.name} url={pokemon.url} />
+                        )
+                    })
+                }
+            </div>
         </div>
     );
 }
